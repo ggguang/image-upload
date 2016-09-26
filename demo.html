@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-CN">
+    <title>Image</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/image-upload.css">
+</head>
+
+<body>
+    <div id="_imageUploadContent">
+        <input type="button" onclick="dialogUploadImage()" value="选择图片">
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.upload.js"></script>
+
+    <script>
+        function dialogUploadImage() {
+            $.imageUpload({
+                url: '/image-upload/php/image-upload.php',
+                fileName: 'image',
+                params: {_token: 'aaa'},
+                dataType: 'json',
+                onSubmit: _imageUploadSubmit,
+                onComplete: _imageUploadComplete,
+                onError: _imageUploadError
+            });
+        }
+    </script>
+</body>
+
+</html>

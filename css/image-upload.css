@@ -1,0 +1,17 @@
+body{ font-size:12px; font-family: Tahoma, SimSun, sans-serif;}
+a { text-decoration: none; border: 0; background-color: transparent; }
+body, div, q, iframe, form, h5 { margin: 0; padding: 0; }
+img, fieldset { border: none 0; }
+hr { clear:both; margin: 0; border:0 none; font-size: 1px; line-height:1px; color: #069; background-color:#069; height: 1px; }
+#_imageUploadContent { padding-left:50px; padding-right:50px; margin-top: 5px;}
+._imageUploadItem { border:#eee solid 2px; padding:10px; }
+._imageUploadMasterBox{ display: block; border-bottom: #069 solid 2px; padding-bottom: 4px;}
+._imageUploadMasterBox:after { content: "020"; display: block; height: 0; clear: both;visibility:hidden; }
+._imageUploadImgBox, ._imageUploadBtnBox, ._imageUploadTxtBox { float: left; width:80px; height: 80px; line-height: 80px; text-align: center;vertical-align: middle;position: relative;}
+._imageUploadImgBox img{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+._imageUploadBtnBox{ min-width: 50px; width: auto; padding: 0 2px;}
+._imageUploadBtnBox button{ margin-left:2px; vertical-align: middle; }
+._imageUploadTxtBox{ width: auto; }
+._imageUploadTxtBox textarea{margin:2px 0 0 2px;height: 74px; }
+._imageUploadImg { width:80px; height:80px;vertical-align: middle;}
+._loadingImg { width:16px; height:16px;vertical-align: middle;position: absolute; top: 0; bottom: 0; margin: auto 0;}
