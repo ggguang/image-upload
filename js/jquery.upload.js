@@ -60,11 +60,11 @@
             var data = $(contents).find('body').text();
             //console.log(title, data);
 
-            if (title === '404 Not Found') {
+            if (title.indexOf('404') === 0) {
                 data = {error: title, message: data};
-                opts.onError(data, frameName);
+                //opts.onError(data, frameName);
             }
-            if ('json' == opts.dataType) {
+            if (!data.error && 'json' == opts.dataType) {
                 data = window.eval('(' + data + ')');
             }
             opts.onComplete(data, frameName);
@@ -132,7 +132,7 @@ var _base64Callback = function (fileInputDOM, imagePath) {
         $("#_imageUploadContent").append('<div class="_imageUploadItem"></div>');
     }
 
-    $('._imageUploadItem').append(html);
+    $('._imageUploadItem').prepend(html);
 };
 
 var _imageUploadComplete = function (data, frameName) {
@@ -153,8 +153,12 @@ var _imageUploadComplete = function (data, frameName) {
 
 var _imageUploadSubmit = function (frameName) {
     setTimeout(function () {
-        if ($('#image_' + frameName).find('._imageUploadBtnBox').css('display')  !== 'none')
+        if (
+            $('#image_' + frameName).find('._imageUploadBtnBox').css('display') !== 'none'
+            && !$('#image_' + frameName).find('._imageUploadBtnBox button[action=cancel]').is('button')
+        ) {
             $('#image_' + frameName).append('<div class="_imageUploadBtnBox"><button type="button" action="cancel">删除</button></div>');
+        }
     }, 20000);
 
 };
@@ -175,7 +179,7 @@ function _changeImageSrc(data, frameName) {
 }
 
 var _previewWithPrettyPhoto = function (imgJqNode) {
-    var previewNode = $('<a href="'+imgJqNode.attr('src')+'"><img src="'+imgJqNode.attr('src')+'"/></a>');
+    var previewNode = $('<a href="' + imgJqNode.attr('src') + '"><img src="' + imgJqNode.attr('src') + '"/></a>');
     //previewNode.prettyPhoto({social_tools:false});
     //previewNode.click();//prettyPhoto对base64图片兼容不好。不开预览
 };

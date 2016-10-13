@@ -3,7 +3,7 @@ a { text-decoration: none; border: 0; background-color: transparent; }
 body, div, q, iframe, form, h5 { margin: 0; padding: 0; }
 img, fieldset { border: none 0; }
 hr { clear:both; margin: 0; border:0 none; font-size: 1px; line-height:1px; color: #069; background-color:#069; height: 1px; }
-#_imageUploadContent { padding-left:50px; padding-right:50px; margin-top: 5px;}
+#_imageUploadContent { padding-left:10px; padding-right:10px; margin-top: 5px;}
 ._imageUploadItem { border:#eee solid 2px; padding:10px; }
 ._imageUploadMasterBox{ display: block; border-bottom: #069 solid 2px; padding-bottom: 4px;}
 ._imageUploadMasterBox:after { content: "020"; display: block; height: 0; clear: both;visibility:hidden; }
